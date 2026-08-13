@@ -2456,8 +2456,6 @@ static int cmd_wifi_ap_enable(const struct shell *sh, size_t argc,
 	}
 #endif
 
-	k_mutex_init(&wifi_ap_sta_list_lock);
-
 	ret = net_mgmt(NET_REQUEST_WIFI_AP_ENABLE, iface, &cnx_params,
 		       sizeof(struct wifi_connect_req_params));
 	if (ret) {
@@ -5008,8 +5006,8 @@ static int parse_nan_args_transmit(const struct shell *sh, size_t argc, char *ar
 /* Common NAN command dispatcher */
 static int cmd_wifi_nan_exec(const struct shell *sh, size_t argc, char *argv[],
 			     struct wifi_nan_params *params,
-			     int (*parse_fn)(const struct shell *, size_t, char **,
-					     struct wifi_nan_params *),
+			     int (*parse_fn)(const struct shell *sh, size_t argc, char **argv,
+					     struct wifi_nan_params *params),
 			     const char *parse_err_msg,
 			     const char *exec_err_msg,
 			     const char *success_msg,
@@ -5374,7 +5372,7 @@ SHELL_STATIC_SUBCMD_SET_CREATE(
 				 "-w --ieee-80211w=<MFP> (optional: needs security type to "
 				 "be specified)\n"
 				 "0:Disable, 1:Optional, 2:Required\n"
-				 "-b --band=<band> (2 -2.6GHz, 5 - 5Ghz, 6 - 6GHz)\n"
+				 "-b --band=<band> (2 - 2.4GHz, 5 - 5Ghz, 6 - 6GHz)\n"
 				 "-m --bssid=<BSSID>\n"
 				 "-g --ignore-broadcast-ssid=<type>. Hide SSID in AP mode.\n"
 				 "0: disabled (default)\n"
