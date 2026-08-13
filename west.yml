@@ -172,7 +172,8 @@ manifest:
       groups:
         - hal
     - name: hal_espressif
-      revision: 3d4d922a4d2994f844790ec031a584ec71240485
+      remote: rwrozelle
+      revision: esp32-smp-core
       path: modules/hal/espressif
       west-commands: west/west-commands.yml
       groups:
