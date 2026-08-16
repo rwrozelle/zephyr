@@ -892,6 +892,16 @@ Syscon
   larger register offsets. Code that explicitly declares ``uint16_t`` variables for the
   register parameter or implements the syscon driver API functions may need to be updated.
 
+Texas Instruments
+=================
+
+* Using a :dtcompatible:`ti,am654-timer` instance as system timer now requires
+  the explicit selection via the :ref:`generic chosen
+  <devicetree-zephyr-chosen-nodes>` ``zephyr,system-timer`` node, which is
+  provided for all SoCs that are using it. Downstream boards and applications
+  that want to use another instance than the SoC default one need to overwrite
+  this. (:github:`115068`)
+
 Timer
 =====
 
@@ -1151,7 +1161,7 @@ Bluetooth Audio
 * VOCS
 
   * The VOCS client now requires automatic CCC (Client Characteristic Configuration) discovery.
-    :kconfig:option:`BT_VOCS_CLIENT` now depends on :kconfig:option:`BT_GATT_AUTO_DISCOVER_CCC`.
+    :kconfig:option:`CONFIG_BT_VOCS_CLIENT` now depends on :kconfig:option:`CONFIG_BT_GATT_AUTO_DISCOVER_CCC`.
     Applications using VOCS client must ensure that CCC auto-discovery support is enabled. (:github:`110607`)
 
 .. zephyr-keep-sorted-stop
@@ -1169,7 +1179,8 @@ Bluetooth Classic
 
   (:github:`108022`)
 
-* Renamed ``BT_DEVICE_VEDNOR_ID`` to :kconfig:option:`BT_DEVICE_VENDOR_ID` to fix a typo.
+* Renamed ``CONFIG_BT_DEVICE_VEDNOR_ID`` to :kconfig:option:`CONFIG_BT_DEVICE_VENDOR_ID`
+  to fix a typo.
 
 Bluetooth HCI
 =============
@@ -1305,7 +1316,7 @@ Networking
 
 * The default WPA supplicant network selection criterion has changed from
   throughput-based to reliability-based (SNR), switching the
-  :kconfig:option:`WIFI_NM_WPA_SUPPLICANT_NW_SEL` Kconfig default from
+  :kconfig:option:`CONFIG_WIFI_NM_WPA_SUPPLICANT_NW_SEL` Kconfig default from
   :kconfig:option:`CONFIG_WIFI_NM_WPA_SUPPLICANT_NW_SEL_THROUGHPUT` to
   :kconfig:option:`CONFIG_WIFI_NM_WPA_SUPPLICANT_NW_SEL_RELIABILITY`.
   Previously, SNR above 25 dBm was considered sufficient and largely excluded
@@ -1533,15 +1544,15 @@ Mbed TLS
 * TF-PSA-Crypto was updated to version 1.1.1. Release notes can be found
   `here <https://github.com/Mbed-TLS/TF-PSA-Crypto/releases/tag/tf-psa-crypto-1.1.1>`_.
 
-Trusted Firmware-M
-==================
+Trusted Firmware-M (TF-M)
+=========================
 
-* :kconfig:option:`TFM_ZEPHYR_4_0_TO_4_2_COMPATIBILITY` has been deprecated in favor of
-  :kconfig:option:`TFM_ZEPHYR_4_2_COMPATIBILITY`, which more accurately describes when the symbol
+* :kconfig:option:`CONFIG_TFM_ZEPHYR_4_0_TO_4_2_COMPATIBILITY` has been deprecated in favor of
+  :kconfig:option:`CONFIG_TFM_ZEPHYR_4_2_COMPATIBILITY`, which more accurately describes when the symbol
   needs to be set.
 
 * :kconfig:option:`CONFIG_BUILD_WITH_TFM` does not enable :kconfig:option:`CONFIG_MBEDTLS` /
-  :kconfig:option:`CONFIG_PSA_CRYPTO` anymore. Make sure to enable them explicitly in your build as needed. (:github:`114762#`)
+  :kconfig:option:`CONFIG_PSA_CRYPTO` anymore. Make sure to enable them explicitly in your build as needed. (:github:`114762`)
 
 Snippets
 ********

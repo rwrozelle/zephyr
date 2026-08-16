@@ -149,7 +149,7 @@ manifest:
       groups:
         - fs
     - name: hal_adi
-      revision: a554a31806bc308d954fdb43143d260902da9b1e
+      revision: ab16e67b49cfe45826e70d68b720ee5751e77664
       path: modules/hal/adi
       groups:
         - hal
@@ -201,7 +201,7 @@ manifest:
       groups:
         - hal
     - name: hal_microchip
-      revision: 1f2976a52e03c453a2d2fb86754664ba75275c61
+      revision: 550371954d33f7f5f17b3eb2f7ecc46ca3fa1b62
       path: modules/hal/microchip
       groups:
         - hal
@@ -216,7 +216,7 @@ manifest:
       groups:
         - hal
     - name: hal_nxp
-      revision: 1fad84dd567809ba69cc519c7bc58bc6458d1654
+      revision: 5978c2877c25d9b8d19c6e363cf7e5f478ca7cdd
       path: modules/hal/nxp
       groups:
         - hal
@@ -232,7 +232,7 @@ manifest:
         - hal
     - name: hal_realtek
       path: modules/hal/realtek
-      revision: c20e7ee9744a1b9b5f05b99260930a7f196b9b12
+      revision: 29d365ccfbceb9f42ce666d75463fbe2c83b8e29
       groups:
         - hal
     - name: hal_renesas
@@ -251,7 +251,7 @@ manifest:
       groups:
         - hal
     - name: hal_silabs
-      revision: 759584f0b08f3cc99443a293a59b4a492687c67e
+      revision: 8d871343cd8f4518a69dfc96a31a2963c1f59f35
       path: modules/hal/silabs
       groups:
         - hal
@@ -261,7 +261,7 @@ manifest:
       groups:
         - hal
     - name: hal_stm32
-      revision: e7c0d3cd97bec297b70f506e2047640b83569d87
+      revision: 33576ef05e529cad803f210cc95b52b607757c96
       path: modules/hal/stm32
       groups:
         - hal
@@ -355,7 +355,7 @@ manifest:
       groups:
         - tools
     - name: nrf_hw_models
-      revision: 581cc8c8d922b062101ab2cc252c4b4699b0dae9
+      revision: c84230d0329a2ce5e449bbd556d6854861a6eee7
       path: modules/bsim_hw_models/nrf_hw_models
     - name: nrf_wifi
       revision: 0aaa9aa812877cb6bc020df8260d0607a3f0ec1a
